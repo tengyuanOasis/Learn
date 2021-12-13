@@ -1,7 +1,5 @@
-learn-vuex/node_modules
-
 .DS_Store
-
+vuex-test/node_modules
 /dist
 
 

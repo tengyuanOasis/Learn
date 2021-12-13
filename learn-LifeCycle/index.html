@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vue生命周期</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+		<style>
+			.parent {
+				width: 200px;
+				height: 200px;
+				border: 1px solid red;
+				border-radius: 10px;
+			}
+			.child {
+				width: 100px;
+				height: 100px;
+				border: 1px solid blue;
+				border-radius: 10px;
+				margin: 40px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<h4>打开f12查看父子组件生命周期执行顺序</h4>
+
+		<div id="app" class="parent">
+			this is Parent
+			<Child></Child>
+		</div>
+	
+	</body>
+</html>
+
+<script>
+	Vue.component("Child", {
+		template: `<div class="child"> this is Child </div> `,
+		beforeCreate() {
+			console.log("%c Child：", "color:blue;", "beforeCreate");
+		},
+		created() {
+			console.log("%c Child：", "color:blue;", "created");
+		},
+		beforeMount() {
+			console.log("%c Child：", "color:blue;", "beforeMount");
+		},
+		mounted() {
+			console.log("%c Child：", "color:blue;", "mounted");
+		},
+		beforeUpdate() {
+			console.log("%c Child：", "color:blue;", "beforeUpdate");
+		},
+		updated() {
+			console.log("%c Child：", "color:blue;", "updated");
+		},
+		activated() {
+			console.log("%c Child：", "color:blue;", "activated");
+		},
+		deactivated() {
+			console.log("%c Child：", "color:blue;", "deactivated");
+		},
+		beforeUnmount() {
+			console.log("%c Child：", "color:blue;", "beforeUnmount");
+		}
+	});
+
+	var app = new Vue({
+		el: "#app",
+		beforeCreate() {
+			console.log("%c Parent:", "color:#f00;", "beforeCreate");
+		},
+		created() {
+			console.log("%c Parent:", "color:#f00;", "created");
+		},
+		beforeMount() {
+			console.log("%c Parent:", "color:#f00;", "beforeMount");
+		},
+		mounted() {
+			console.log("%c Parent:", "color:#f00;", "mounted");
+		},
+		beforeUpdate() {
+			console.log("%c Parent:", "color:#f00;", "beforeUpdate");
+		},
+		updated() {
+			console.log("%c Parent:", "color:#f00;", "updated");
+		},
+		activated() {
+			console.log("%c Parent:", "color:#f00;", "activated");
+		},
+		deactivated() {
+			console.log("%c Parent:", "color:#f00;", "deactivated");
+		},
+		beforeUnmount() {
+			console.log("%c Parent:", "color:#f00;", "beforeUnmount");
+		}
+	});
+</script>
