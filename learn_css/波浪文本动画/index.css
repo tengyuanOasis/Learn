@@ -1,0 +1,52 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: '微软雅黑';
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background: #000;
+}
+
+.wavy {
+	position: relative;
+	/* 
+  盒倒影属性: -webkit-box-reflect
+  语法：
+  -webkit-box-reflect: [ above | below | right | left ]? <length>? <image>?
+  
+  - 方位
+  可以是下面4个值中的1个，above,below,left,right，分别表示上下左右。如果不是使用类似inherit等全局关键字，则此方位值是不能缺省的。
+  - 偏移大小
+  倒影和原始元素偏移距离。可以是数值，也可以是百分比值。如果是百分比值，则百分比大小是相对于元素自身尺寸计算的。和transform中translate的百分比计算是一致的。
+  - 遮罩图片
+  对元素倒影的遮罩控制。语法类似于background-image。
+  */
+	-webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+}
+
+.wavy span {
+	position: relative;
+	display: inline-block;
+	color: #fff;
+	font-size: 2em;
+	animation: animate 1s ease-in-out infinite;
+	animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes animate {
+	0% {
+		transform: translateY(0px);
+	}
+	20% {
+		transform: translateY(-24px);
+	}
+	40%,
+	100% {
+		transform: translateY(0px);
+	}
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			li {
+				list-style-type: none;
+				position: relative;
+				margin: 2px;
+				padding: 0.5em 0.5em 0.5em 2em;
+				background: lightgrey;
+				font-family: sans-serif;
+			}
+
+			li.done {
+				background: #ccff99;
+			}
+
+			li.done::before {
+				content: "";
+				position: absolute;
+				border-color: #009933;
+				border-style: solid;
+				border-width: 0 0.3em 0.25em 0;
+				height: 1em;
+				top: 1.3em;
+				left: 0.6em;
+				margin-top: -1em;
+				transform: rotate(45deg);
+				width: 0.5em;
+			}
+
+			button {
+				z-index: 1;
+				position: relative;
+				font-size: inherit;
+				font-family: inherit;
+				color: white;
+				padding: 0.5em 1em;
+				outline: none;
+				border: none;
+				background-color: hsl(236, 32%, 26%);
+				overflow: hidden;
+				transition: color 0.4s ease-in-out;
+			}
+
+			button::before {
+				content: "";
+				z-index: -1;
+				position: absolute;
+				top: 100%;
+				right: 100%;
+				width: 1em;
+				height: 1em;
+				border-radius: 50%;
+				background-color: #3cefff;
+				transform-origin: center;
+				transform: translate3d(50%, -50%, 0) scale3d(0, 0, 0);
+				transition: transform 0.45s ease-in-out;
+			}
+
+			button:hover {
+				cursor: pointer;
+				color: #161616;
+			}
+
+			button:hover::before {
+				transform: translate3d(50%, -50%, 0) scale3d(15, 15, 15);
+			}
+		</style>
+	</head>
+	<body>
+	
+		<div>
+			<ul>
+				<li>Buy milk</li>
+				<li>Take the dog for a walk</li>
+				<li>Exercise</li>
+				<li>Write code</li>
+				<li>Play music</li>
+				<li>Relax</li>
+			</ul>
+		</div>
+
+		<button>Bubble</button>
+	</body>
+	<script>
+		var list = document.querySelector("ul");
+		list.addEventListener(
+			"click",
+			function (ev) {
+				if (ev.target.tagName === "LI") {
+					ev.target.classList.toggle("done");
+				}
+			},
+			false
+		);
+	</script>
+</html>

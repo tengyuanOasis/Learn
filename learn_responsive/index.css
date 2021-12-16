@@ -1,0 +1,33 @@
+#root {
+	column-count: 6; /* 设置列数 */
+	column-gap: 20px; /*设置列间隔 */
+}
+
+#root img {
+	width: 100%;
+	height: auto;
+	margin: 4% auto;
+	box-shadow: -3px 5px 15px #000;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+img:hover {
+	width: 200%;
+}
+
+/* 媒体查询，根据不同宽度修改列数 */
+@media (max-width: 1200px) {
+	#root {
+		column-count: 4;
+	}
+}
+@media (max-width: 800px) {
+	#root {
+		column-count: 3;
+	}
+}
+@media (max-width: 600px) {
+	#root {
+		column-count: 2;
+	}
+}
