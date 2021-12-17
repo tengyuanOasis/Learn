@@ -1,11 +1,9 @@
-/**
- * 用于依赖（watcher）收集和提醒更新
- * ! sub 即为 watcher
- */
-
 let uid = 0;
 
-
+/**
+ * 用于依赖（watcher）收集和提醒更新
+ *
+ */
 export default class Dep {
 	constructor() {
 		//每个Dep唯一ID
@@ -14,6 +12,7 @@ export default class Dep {
 		this.subs = [];
 	}
 
+	// sub 即为 watcher
 	addSub(sub) {
 		this.subs.push(sub);
 	}
@@ -26,6 +25,9 @@ export default class Dep {
 			Dep.target.addDep(this);
 		}
 	}
+	// removeSub(sub) {
+	// 	remove(this.subs, sub);
+	// }
 
 	notify() {
 		this.subs.forEach(function (sub) {

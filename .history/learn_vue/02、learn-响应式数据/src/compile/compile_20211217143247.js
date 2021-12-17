@@ -6,6 +6,7 @@ import Watcher from "../observer/watcher";
  * @param {*} vm : Vue实例
  */
 export default function Compile(el, vm) {
+	console.log('vm: ', vm);
 	this.$vm = vm;
 	// 找到真实dom节点
 	this.$el = this.isElementNode(el) ? el : document.querySelector(el);

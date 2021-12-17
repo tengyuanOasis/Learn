@@ -5,14 +5,19 @@
  *  2、自身必须有一个update()方法
  *  3、待属性变动dep.notice()通知时，能调用自身的update()方法，并触发Compile中绑定的回调，则功成身退。
  */
-import Dep from './dep'
+import Dep from "./dep";
 
+/**
+ *
+ * @param {*} vm ： component
+ * @param {*} expOrFn string | Function
+ * @param {*} cb Function
+ */
 export default function Watcher(vm, expOrFn, cb) {
-	this.cb = cb;
 	this.vm = vm;
 	this.expOrFn = expOrFn;
+	this.cb = cb;
 	this.depIds = {};
-
 	if (typeof expOrFn === "function") {
 		this.getter = expOrFn;
 	} else {
@@ -48,7 +53,7 @@ Watcher.prototype = {
 		// 4. 每个子属性的watcher在添加到子属性的dep的同时，也会添加到父属性的dep
 		// 监听子属性的同时监听父属性的变更，这样，父属性改变时，子属性的watcher也能收到通知进行update
 		// 这一步是在 this.get() --> this.getVMVal() 里面完成，forEach时会从父级开始取值，间接调用了它的getter
-		// 触发了addDep(), 在整个forEach过程，当前wacher都会加入到每个父级过程属性的dep
+		// 触发了addDep(), 在整个forEach过程，当前watcher都会加入到每个父级过程属性的dep
 		// 例如：当前watcher的是'child.child.name', 那么child, child.child, child.child.name这三个属性的dep都会加入当前watcher
 		if (!this.depIds.hasOwnProperty(dep.id)) {
 			dep.addSub(this);

@@ -43,6 +43,7 @@ class Observer {
 // Object.defineProperty数据劫持核心 兼容性在ie9以及以上
 function defineReactive(data, key, value) {
 	const dep = new Dep();
+	console.log('dep: ', dep);
 	// 递归
 	observe(value);
 	// --如果value还是一个对象会继续走一遍odefineReactive 层层遍历一直到value不是对象才停止
@@ -50,9 +51,9 @@ function defineReactive(data, key, value) {
 	Object.defineProperty(data, key, {
 		get() {
 			console.log("数据劫持获取值：", value);
-
 			// Dep.target 全局变量指向的就是当前正在解析指令的Compile生成的 Watcher
-			// 会执行到 dep.depend()， 将 Watcher 添加到 Dep 对象的 Watcher 列表中
+			// 会执行到 dep.addSub(Dep.target), 将 Watcher 添加到 Dep 对象的 Watcher 列表中
+			console.log("Dep.target: ", Dep.target);
 			if (Dep.target) {
 				dep.depend();
 			}

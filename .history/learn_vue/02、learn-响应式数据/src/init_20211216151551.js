@@ -12,7 +12,6 @@ export function initMixin(Vue) {
 			// this指向_init实例对象
 			// this.$options即用户new Vue传入的属性
 			vm.$options = options;
-			
 			// 04、初始化状态，将Vue的options传入initState函数
 			initState(vm);
 

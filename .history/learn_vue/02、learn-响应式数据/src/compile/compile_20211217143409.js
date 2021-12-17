@@ -134,6 +134,7 @@ var compileUtil = {
 
 		updaterFn && updaterFn(node, this._getVMVal(vm, exp));
 
+		console.log(123)
 		new Watcher(vm, exp, function (value, oldValue) {
 			updaterFn && updaterFn(node, value, oldValue);
 		});

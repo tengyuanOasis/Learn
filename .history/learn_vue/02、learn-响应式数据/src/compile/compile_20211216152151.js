@@ -9,7 +9,6 @@ export default function Compile(el, vm) {
 	this.$vm = vm;
 	// 找到真实dom节点
 	this.$el = this.isElementNode(el) ? el : document.querySelector(el);
-
 	if (this.$el) {
 		this.$fragment = this.node2Fragment(this.$el);
 		// 找到所有dom标签并渲染
