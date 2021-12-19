@@ -4,6 +4,7 @@ import Dep from "./dep";
 class Observer {
 	// 观测值
 	constructor(value) {
+		// 将Observer实例绑定到data的__ob__属性上面去，之前说过observe的时候会先检测是否已经有__ob__对象存放Observer实例了，def方法定义可以参考https://github.com/vuejs/vue/blob/dev/src/core/util/lang.js#L16
 		Object.defineProperty(value, "__ob__", {
 			//  值指代的就是Observer的实例
 			value: this,
