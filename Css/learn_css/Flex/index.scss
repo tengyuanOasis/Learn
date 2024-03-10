@@ -1,0 +1,105 @@
+/** @format */
+.flex-box {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.box {
+	width: 200px;
+	height: 200px;
+	border: 1px solid #000;
+	border-radius: 10px;
+	margin: 10px;
+	box-sizing: border-box;
+	padding: 10px;
+	display: flex;
+}
+
+.dot {
+	width: 40px;
+	height: 40px;
+	background-color: #000;
+	border-radius: 50%;
+}
+
+// 一点
+.box1 {
+	justify-content: center;
+	align-items: center;
+}
+
+// 两点
+.box2 {
+	flex-direction: column;
+	justify-content: space-between;
+	.dot2 {
+		align-self: flex-end;
+	}
+}
+
+// 三点
+.box3 {
+	flex-direction: column;
+	justify-content: space-between;
+	.dot2 {
+		align-self: center;
+	}
+	.dot3 {
+		align-self: flex-end;
+	}
+}
+
+// 四点
+.box4 {
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-between;
+	.dotbox {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+	}
+}
+
+// 五点
+.box5 {
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-between;
+	.dotbox {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		.dot1,
+		.dot4 {
+			align-self: flex-start;
+		}
+		.dot2,
+		.dot5 {
+			align-self: flex-end;
+		}
+	}
+	.dotbox2 {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+// 六点
+.box6 {
+	justify-content: space-between;
+	.dotbox {
+		display: flex;
+		width: 50%;
+		height: 100%;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.dotbox1 {
+		align-items: flex-start;
+	}
+	.dotbox2 {
+		align-items: flex-end;
+	}
+}

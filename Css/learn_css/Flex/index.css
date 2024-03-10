@@ -1,0 +1,93 @@
+/** @format */
+
+.flex-box {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.box {
+	width: 200px;
+	height: 200px;
+	border: 1px solid #000;
+	border-radius: 10px;
+	margin: 10px;
+	box-sizing: border-box;
+	padding: 10px;
+	display: flex;
+}
+.dot {
+	width: 40px;
+	height: 40px;
+	background-color: #000;
+	border-radius: 50%;
+}
+.box1 {
+	justify-content: center;
+	align-items: center;
+}
+.box2 {
+	flex-direction: column;
+	justify-content: space-between;
+}
+.box2 .dot2 {
+	align-self: flex-end;
+}
+.box3 {
+	flex-direction: column;
+	justify-content: space-between;
+}
+.box3 .dot2 {
+	align-self: center;
+}
+.box3 .dot3 {
+	align-self: flex-end;
+}
+.box4 {
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-between;
+}
+.box4 .dotbox {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+.box5 {
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-between;
+}
+.box5 .dotbox {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+.box5 .dotbox .dot1,
+.box5 .dotbox .dot4 {
+	align-self: flex-start;
+}
+.box5 .dotbox .dot2,
+.box5 .dotbox .dot5 {
+	align-self: flex-end;
+}
+.box5 .dotbox2 {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+.box6 {
+	justify-content: space-between;
+}
+.box6 .dotbox {
+	display: flex;
+	width: 50%;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.box6 .dotbox1 {
+	align-items: flex-start;
+}
+.box6 .dotbox2 {
+	align-items: flex-end;
+}
