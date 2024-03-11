@@ -1,40 +1,20 @@
 /** @format */
 
+import { Animal, Dog } from './animal';
+import { Person, Gender } from './Person';
 (() => {
-	enum Gender {
-		MALE = 0,
-		FEMALE = 1
-	}
-	class Person {
-		/**
-		 * @description
-		 * public 公开属性, 可以在任何地方被访问访问
-		 * private 私有属性, 只能在类内部被访问修改
-		 * protected 受保护的, 只能在类内部和子类中被访问
-		 */
-		public name: string;
-		private age: number;
-		protected sex: Gender;
+	const animal = new Animal('Tom', 5, 10);
+	console.log('%c [ animal ]', animal);
+	// console.log(animal.name); // 可以访问 public 成员
+	// console.log(animal.age);  // 不能访问 private 成员，会报错
+	// console.log(animal.weight);  // 不能访问 protected 成员，会报错
 
-		constructor(name: string, age: number, sex: Gender) {
-			this.name = name;
-			this.age = age;
-			this.sex = sex;
-		}
-
-		getAge() {
-			return `age is ${this.age}`;
-		}
-
-		setAge(age: number) {
-			this.age = age;
-		}
-
-		get gender() {
-			return `gender is ${this.sex}`;
-		}
-	}
-
+	const dog = new Dog('Buddy', 3, 8);
+	console.log(dog.name); // 可以访问 public 成员
+	console.log(dog.displayDog());
+	// console.log(dog.age);  // 不能访问 private 成员，会报错
+	// console.log(dog.weight);  // 不能访问 protected 成员，会报错
+	console.log('-----------------分界线---------------------');
 	const person = new Person('Mark', 18, Gender.FEMALE);
 	// person.age = 20; //报错，age只能在类内部被访问
 	console.log(person);
