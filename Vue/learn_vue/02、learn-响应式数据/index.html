@@ -2,19 +2,31 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
 		<title>Document</title>
 	</head>
 	<body>
 		<p>Vue挂载在window了,控制台输入 const vm = window.Vue 即可在控制台调试Vue数据</p>
-		<img src="https://gitee.com/JuntengMa/imgae/raw/master/20211214173640.png" alt="" />
+		<img
+			src="https://gitee.com/tengtengtengyuan/imgae/raw/master/20211214173640.png"
+			alt=""
+		/>
 
 		<div id="app">
 			<p>{{name}}</p>
 			<p>
 				inputName:
-				<input type="text" v-model="name" />
+				<input
+					type="text"
+					v-model="name"
+				/>
 			</p>
 		</div>
 	</body>
@@ -22,12 +34,12 @@
 	<script>
 		const Vue = window.Vue;
 		var vm = new Vue({
-			el: "#app",
+			el: '#app',
 			data() {
 				return {
-					name: "Mackle",
+					name: 'Mackle',
 					age: 18,
-					hobby: ["jump", "swimming", "travel"]
+					hobby: ['jump', 'swimming', 'travel']
 				};
 			}
 		});

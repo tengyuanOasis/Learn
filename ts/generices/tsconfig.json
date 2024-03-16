@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"outDir": "./js",
+		"module": "ES6",
+		"target": "es2016",
+		// 不生成编译后的文件
+		"noEmit": false,
+		// 当有错误时不生成编译后的文件
+		"noEmitOnError": true,
+		// 用来设置編译后的文件是否使用严格模式,默认false "alwaysStrict":true,
+		"noImplicitAny": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"skipLibCheck": true, /* Skip type checking all .d.ts files. */
+		// 不允许不明确类型的this
+		"noImplicitThis": true,
+		// 严格的检查空值
+		"strictNullChecks": true
+	}
+}

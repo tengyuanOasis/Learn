@@ -1,7 +1,7 @@
 /** @format */
 
-import { Animal, Dog } from './animal';
-import { Person, Gender } from './Person';
+import { Animal, Dog } from './modules/animal';
+import { Person, Gender } from './modules/Person';
 (() => {
 	const animal = new Animal('Tom', 5, 10);
 	console.log('%c [ animal ]', animal);
