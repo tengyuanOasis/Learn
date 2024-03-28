@@ -6,11 +6,13 @@
 - [ ] learn_react
   - LifeCircleDemo 
   - ContextDemo
-  - 
+
+
+- [x] typescript
 - [ ] learn_vue 
   - 生命周期
   - 响应式原理
-- [ ] learn_vuex
+- [x] learn_vuex
 
 
 
